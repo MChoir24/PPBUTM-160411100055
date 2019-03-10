@@ -27,10 +27,10 @@ public class Tugas1Activity extends AppCompatActivity {
     }
 
     public void halloAct(View view) {
-        if (nama.getText().toString().equals("")){
+        String s = nama.getText().toString().trim();
+        if (s.isEmpty()){
             nama.setError("Harus terisi");
         }else {
-            String s = nama.getText().toString();
             tv_nama.setText(String.format("hallo %s ",s));
         }
     }

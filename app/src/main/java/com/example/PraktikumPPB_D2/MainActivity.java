@@ -25,5 +25,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tugas2(View view) {
+        Intent intent = new Intent(MainActivity.this, Tugas2Activity.class);
+        startActivity(intent);
     }
 }

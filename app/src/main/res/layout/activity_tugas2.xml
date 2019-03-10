@@ -8,5 +8,34 @@
     android:padding="20dp"
     tools:context="com.example.PraktikumPPB_D2.Tugas2Activity">
 
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Berat Badan"/>
+    <EditText
+        android:id="@+id/editBerat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:lines="1"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tinggi Badan"/>
+    <EditText
+        android:id="@+id/editTinggi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:lines="1"/>
+    <Button
+        android:id="@+id/btnBMI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hitung BMI"
+        android:onClick="hitungBMI"/>
+    <TextView
+        android:id="@+id/tv_result_BMI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>
