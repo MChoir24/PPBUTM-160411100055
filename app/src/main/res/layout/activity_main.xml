@@ -28,4 +28,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="tugas 2"/>
+    <Button
+        android:id="@+id/btnTugas3"
+        android:onClick="tugas3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="tugas 3 (modul 2)"/>
 </LinearLayout>

@@ -1,6 +1,44 @@
 <resources>
     <string name="app_name">Praktikum PPB D2</string>
-    <string name="tv_judul">Masukan Nama anda</string>
+    <!--Indo-->
+    <string name="tv_judul">Nama anda</string>
     <string name="kirim">Kirim</string>
     <string name="judul">Tugas Praktikum PPB D2</string>
+    <string name="tNama">Nama</string>
+    <string name="hNama">Masukan Nama</string>
+    <string name="menuC">Menu Coffe</string>
+    <string name="sajian">Sajian</string>
+    <string name="jumlah">Jumlah</string>
+    <string name="arabica">Arabica</string>
+    <string name="hangat">Hangat</string>
+    <string name="dingin">Dingin</string>
+    <string name="american">American</string>
+    <string name="robusta">Robusta</string>
+    <string name="masukan_uang">Masukan Uang</string>
+    <string name="pesan">Pesan</string>
+    <string name="total">total</string>
+    <string name="erEmpty">Tidak Boleh Kosong</string>
+    <string name="erUang">uang anda kurang</string>
+    <string name="kembalian">Nama : %s Total Belanja : Rp %s Tunai : %s Kembalian : %s</string>
+
+    <!--english-->
+    <string name="tv_judulEn">Your Name</string>
+    <string name="kirimEn">send</string>
+    <string name="judulEn">Practical Taks PPB D2</string>
+    <string name="tNamaEn">Name</string>
+    <string name="hNamaEn">Input name</string>
+    <string name="menuCEn">Menu Coffee</string>
+    <string name="sajianEn">Dish</string>
+    <string name="Total">total</string>
+    <string name="arabicaEn">Arabica</string>
+    <string name="hangatEn">Hot</string>
+    <string name="dinginEn">Cool</string>
+    <string name="americanEn">American</string>
+    <string name="robustaEn">Robusta</string>
+    <string name="masukan_uangEn">Input Money</string>
+    <string name="pesanEn">Ordering</string>
+    <string name="totalEn">total</string>
+    <string name="erEmptyEn">Can not be empty</string>
+    <string name="erUangEn">your money is lacking</string>
+    <string name="kembalianEn">Name : %s Total marketing : Rp %s Tunai : %schange : %s</string>
 </resources>
