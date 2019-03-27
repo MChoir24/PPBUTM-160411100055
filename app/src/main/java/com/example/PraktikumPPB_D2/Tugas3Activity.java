@@ -19,7 +19,7 @@ import android.widget.TextView;
 
 public class Tugas3Activity extends AppCompatActivity implements View.OnClickListener {
 
-    TextView tNama, tMenu,  tSajian, tJumlah, tInputUang, tv_kembalian, tv_total;
+    TextView tNama, tMenu,  tSajian, tJumlah, tInputUang, tv_total;
     EditText eNama,  eJumlah1, eJumlah2, eJumlah3, eUang;
     CheckBox cArabica, cAmerican, cRobusta;
     RadioButton rDingin1, rHangat1, rDingin2, rHangat2, rDingin3, rHangat3, rSatu;
@@ -29,7 +29,7 @@ public class Tugas3Activity extends AppCompatActivity implements View.OnClickLis
 
     int count1 =1, count2 = 1, count3 = 1;
 
-
+    Bundle bundle = new Bundle();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +69,6 @@ public class Tugas3Activity extends AppCompatActivity implements View.OnClickLis
         tMenu = findViewById(R.id.tMenu);
 
         tv_total = findViewById(R.id.tv_total);
-        tv_kembalian = findViewById(R.id.tv_kembalian);
         tSajian = findViewById(R.id.tSajian);
         tJumlah = findViewById(R.id.tJumlah);
         tInputUang = findViewById(R.id.tInputUang);
@@ -83,6 +82,8 @@ public class Tugas3Activity extends AppCompatActivity implements View.OnClickLis
         btnPlus2.setOnClickListener(this);
         btnMin3.setOnClickListener(this);
         btnPlus3.setOnClickListener(this);
+
+
 
     }
 
@@ -144,40 +145,38 @@ public class Tugas3Activity extends AppCompatActivity implements View.OnClickLis
     }
 
     public int hitung(){
+        bundle.clear();
         int value = 0;
         int jumlah = 0;
         int total = 0;
         if (cArabica.isChecked()){
             rSatu = findViewById(rgSajian1.getCheckedRadioButtonId());
-            value = cekRadioButton(rSatu);
+            String sajian = rSatu.getText().toString();
             jumlah = Integer.parseInt(eJumlah1.getText().toString());
-            total += 2000*jumlah+value;
+            total += 2000*jumlah;
+            bundle.putString("menu1","Arabica");
+            bundle.putString("sajian1",sajian);
+            bundle.putString("jumlah1", String.valueOf(jumlah));
         }if (cAmerican.isChecked()){
             rSatu = findViewById(rgSajian2.getCheckedRadioButtonId());
-            value = cekRadioButton(rSatu);
+            String sajian = rSatu.getText().toString();
             jumlah = Integer.parseInt(eJumlah2.getText().toString());
-            total += 2500*jumlah+value;
+            total += 2500*jumlah;
+            bundle.putString("menu2","American");
+            bundle.putString("sajian2",sajian);
+            bundle.putString("jumlah2", String.valueOf(jumlah));
         }if (cRobusta.isChecked()){
             rSatu = findViewById(rgSajian3.getCheckedRadioButtonId());
-            value = cekRadioButton(rSatu);
+            String sajian = rSatu.getText().toString();
             jumlah = Integer.parseInt(eJumlah3.getText().toString());
-            total += 1500*jumlah+value;
+            total += 1500*jumlah;
+            bundle.putString("menu3","Robusta");
+            bundle.putString("sajian3",sajian);
+            bundle.putString("jumlah3", String.valueOf(jumlah));
         }
 
         return total;
     }
-
-    public int cekRadioButton(RadioButton rb){
-        int val = 0;
-        if (rb.getText().toString().trim().equals("Hangat")){
-            val = 500;
-        }
-        return val;
-    }
-
-
-
-
 
     public void onTotal(View view) {
         int total = hitung();
@@ -244,10 +243,19 @@ public class Tugas3Activity extends AppCompatActivity implements View.OnClickLis
             total = Integer.parseInt(vTotal);
             if (uang >= total){
                 kembalian = uang-total;
+                bundle.putString("nama", vNama);
+                bundle.putString("uang", vUang);
+                bundle.putString("total", vTotal);
+                bundle.putString("kembalian", String.valueOf(kembalian));
+
+                Intent intent = new Intent(Tugas3Activity.this, ResultCoffeActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }else {
                 eUang.setError(getString(R.string.erUang));
             }
-            tv_kembalian.setText(String.format(getString(R.string.kembalian), vNama, vTotal, vUang, Integer.toString(kembalian)));
+
+
         }
     }
 }

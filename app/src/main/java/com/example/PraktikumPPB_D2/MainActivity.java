@@ -33,4 +33,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, Tugas3Activity.class);
         startActivity(intent);
     }
+
+    public void tugas4(View view) {
+        String s = "ini pesannya";
+        Intent intent = new Intent(MainActivity.this, tugas4Activity.class);
+        intent.putExtra("pesan",s);
+        startActivity(intent);
+    }
 }

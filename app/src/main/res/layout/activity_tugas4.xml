@@ -4,44 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".MainActivity">
+    tools:context="com.example.PraktikumPPB_D2.tugas4Activity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
-
+        android:padding="@dimen/margin_default">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_default"
+            android:src="@drawable/coffeeicon1"
+            />
+        <EditText
+            android:id="@+id/eUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="User Name"
+            android:layout_marginBottom="@dimen/margin_default"
+            android:singleLine="true"/>
+        <EditText
+            android:id="@+id/ePassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:layout_marginBottom="@dimen/margin_default"
+            android:singleLine="true"/>
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign in"
+            android:onClick="login"/>
         <TextView
-            android:textStyle="bold"
-            android:textSize="30dp"
+            android:id="@+id/tv_err"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="@string/judul"/>
-
-        <Button
-            android:id="@+id/btnTugas1"
-            android:onClick="tugas1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="tugas 1"/>
-        <Button
-            android:id="@+id/btnTugas2"
-            android:onClick="tugas2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="tugas 2"/>
-        <Button
-            android:id="@+id/btnTugas3"
-            android:onClick="tugas3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="tugas 3 (modul 2)"/>
-        <Button
-            android:id="@+id/btnTugas4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="tugas 4 (modul 3)"
-            android:onClick="tugas4"/>
+            android:textAlignment="center"/>
     </LinearLayout>
+
+
 </ScrollView>

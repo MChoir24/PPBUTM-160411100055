@@ -38,7 +38,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tNama"
                 android:hint="@string/hNama"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:singleLine="true"/>
 
             <TextView
                 android:id="@+id/tMenu"
@@ -117,7 +118,8 @@
                     android:layout_height="wrap_content"
                     android:layout_toStartOf="@id/btnPlus1"
                     android:text="1"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:singleLine="true"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -173,7 +175,8 @@
                     android:layout_height="wrap_content"
                     android:layout_toStartOf="@id/btnPlus2"
                     android:text="1"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:singleLine="true"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -230,7 +233,8 @@
                     android:layout_height="wrap_content"
                     android:layout_toStartOf="@id/btnPlus3"
                     android:text="1"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:singleLine="true"/>
             </RelativeLayout>
 
             <Button
@@ -270,7 +274,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tInputUang"
                 android:inputType="numberDecimal"
-                android:lines="1"/>
+                android:lines="1"
+                android:singleLine="true"/>
 
             <Button
                 android:id="@+id/btnPesan"
@@ -279,12 +284,6 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/eUang"
                 android:text="@string/pesan" />
-
-            <TextView
-                android:id="@+id/tv_kembalian"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/btnPesan" />
         </RelativeLayout>
 
     </RelativeLayout>
