@@ -40,4 +40,8 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("pesan",s);
         startActivity(intent);
     }
+    public void tugas5(View view) {
+        Intent intent = new Intent(MainActivity.this, Tugas5Activity.class);
+        startActivity(intent);
+    }
 }

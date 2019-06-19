@@ -41,7 +41,13 @@
             android:id="@+id/btnTugas4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="tugas 4 (modul 3)"
+            android:text="tugas 4 (modul 3 dan modul 4)"
             android:onClick="tugas4"/>
+        <Button
+            android:id="@+id/btnTugas5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="tugas 5 (modul 5)"
+            android:onClick="tugas5"/>
     </LinearLayout>
 </ScrollView>

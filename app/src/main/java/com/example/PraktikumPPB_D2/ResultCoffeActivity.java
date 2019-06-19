@@ -1,53 +1,52 @@
 package com.example.PraktikumPPB_D2;
 
-import android.content.Intent;
-import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.telephony.SmsMessage;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import java.util.Objects;
+import java.util.ArrayList;
 
 public class ResultCoffeActivity extends AppCompatActivity {
-    TextView tv_result;
+    public static final String EXTRA_PERSON = "extra_person";
+    TextView tv_result, tv_hargaTotal, tv_kembali;
+    Button btn_bayar;
+    EditText edit_bayar;
+
     Bundle bundle = new Bundle();
     String pesan="";
+    int hargaTotal;
+
+    ArrayList<Coffee> coffees;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_coffe);
         tv_result = findViewById(R.id.tv_resultCoffe);
+        tv_hargaTotal = findViewById(R.id.tv_hargaTotal);
+        tv_kembali = findViewById(R.id.tv_kembalian);
+        edit_bayar = findViewById(R.id.edit_bayar);
 
-        bundle = getIntent().getExtras();
+        coffees = getIntent().getParcelableArrayListExtra(EXTRA_PERSON);
 
-        String nama = bundle.getString("nama");
-        String total = bundle.getString("total");
-        String uang = bundle.getString("uang");
-        String kembalian = bundle.getString("kembalian");
-        pesan+=String.format("Nama : %s\n Menu %5s Sajian %5s total %5s \n", nama,"","","");
-        if (bundle.getString("menu1") != null){
-            String menu = bundle.getString("menu1");
-            String sajian = bundle.getString("sajian1");
-            String jumlah = bundle.getString("jumlah1");
-            pesan += String.format("%5s  %5s 2000x%5s %5s\n" ,menu,sajian,jumlah, 2000*Integer.parseInt(jumlah));
+        int jumlah  = 0;
+        int hargaPer = 0;
+        hargaTotal = 0;
+        String pesan="";
+        for (int i = 0; i < coffees.size(); i++){
+            jumlah = coffees.get(i).getJumlah();
+            if(jumlah > 0){
+                hargaPer = coffees.get(i).getJumlah()*coffees.get(i).getHarga();
+                pesan = pesan + String.format("%s \t %s \t %s \n",coffees.get(i).getNama(), coffees.get(i).getJumlah(),hargaPer);
+                hargaTotal = hargaTotal + hargaPer;
+            }
+            tv_result.setText(pesan);
         }
-        if (bundle.getString("menu2") != null){
-            String menu = bundle.getString("menu2");
-            String sajian = bundle.getString("sajian2");
-            String jumlah = bundle.getString("jumlah2");
-            pesan += String.format("%5s %5s 2500x%5s %5s\n" ,menu,sajian,jumlah, 2500*Integer.parseInt(jumlah));
-        }
-        if (bundle.getString("menu3") != null){
-            String menu = bundle.getString("menu3");
-            String sajian = bundle.getString("sajian3");
-            String jumlah = bundle.getString("jumlah3");
-            pesan += String.format("%5s %5s 1500x%5s %5s\n" ,menu,sajian,jumlah, 1500*Integer.parseInt(jumlah));
-        }
-        pesan+=String.format("Total : %s\nTunai : %s\nKembalian : %s", total,uang,kembalian);
-        tv_result.setText(pesan);
+        tv_hargaTotal.setText(String.valueOf(hargaTotal));
+
     }
 
     public void Done(View view)
@@ -59,5 +58,20 @@ public class ResultCoffeActivity extends AppCompatActivity {
 //        intent.setPackage("com.whatsapp");
 //        startActivity(intent);
         finish();
+    }
+
+    public void bayar(View view) {
+        String uang = edit_bayar.getText().toString().trim();
+        int kembali = 0;
+        if (edit_bayar.getText().toString().trim().equals("")){
+            edit_bayar.setError("tidak boleh kosong");
+        }
+        else if (Integer.parseInt(uang) >= hargaTotal){
+            kembali = Integer.parseInt(uang) - hargaTotal ;
+            tv_kembali.setText(String.valueOf(kembali));
+        }else {
+            Toast.makeText(getApplicationContext(),"uang anda kurang",Toast.LENGTH_SHORT).show();
+            tv_kembali.setText(String.valueOf("0"));
+        }
     }
 }

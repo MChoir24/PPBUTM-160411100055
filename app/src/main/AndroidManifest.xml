@@ -9,9 +9,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ResultCoffeActivity"></activity>
+        <activity android:name=".UpdateBiodataActivity"></activity>
+        <activity android:name=".FormBiodataActivity" />
+        <activity android:name=".ViewBiodataActivity" />
+        <activity android:name=".aboutActivity" />
+        <activity
+            android:name=".OrderCoffee"
+            android:parentActivityName=".Tugas3Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Tugas3Activity" />
+        </activity>
+        <activity android:name=".Tugas5Activity" />
+        <activity android:name=".ResultCoffeActivity" />
         <activity android:name=".tugas4Activity" />
-        <activity android:name=".Tugas3Activity" />
+        <activity
+            android:name=".Tugas3Activity"
+            android:parentActivityName=".MainActivity" />
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity" />
+
         <activity android:name=".Tugas2Activity" />
         <activity android:name=".Tugas1Activity" />
         <activity android:name=".MainActivity">

@@ -2,8 +2,15 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/ID"
-        android:title="Indonesia"/>
-    <item android:id="@+id/EN"
-        android:title="English"/>
+    <!--<item android:id="@+id/ID"-->
+        <!--android:title="Indonesia"/>-->
+    <!--<item android:id="@+id/EN"-->
+        <!--android:title="English"/>-->
+    <item android:id="@+id/item_pesan"
+        android:title="Pesan"
+        app:showAsAction="always"/>
+    <item android:id="@+id/item_about"
+        android:title="About"/>
+    <item android:id="@+id/item_logout"
+        android:title="Logout"/>
 </menu>

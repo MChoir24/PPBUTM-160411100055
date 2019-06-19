@@ -12,10 +12,50 @@
         android:id="@+id/tv_resultCoffe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_hargaTotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rp : "/>
+        <EditText
+            android:id="@+id/edit_bayar"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:singleLine="true"/>
+        <Button
+            android:id="@+id/btnBayar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="bayar"
+            android:text="bayar"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kembalian: Rp "/>
+        <TextView
+            android:id="@+id/tv_kembalian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"/>
+    </LinearLayout>
     <Button
         android:id="@+id/btnDone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="selesai"
         android:onClick="Done"/>
+
 </LinearLayout>
